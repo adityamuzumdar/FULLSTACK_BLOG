@@ -4,6 +4,7 @@ import Layout from "./Layout";
 import IndexPage from "./components/IndexPage";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import CreatePost from "./components/CreatePost";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route index element={<IndexPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/create" element={<CreatePost />} />
       </Route>
     </Routes>
   );
