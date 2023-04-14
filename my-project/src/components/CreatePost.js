@@ -36,6 +36,7 @@ export default function CreatePost() {
 
   return (
     <form onSubmit={createNewPost}>
+      <div className="flex flex-col">
       <input
         type="title"
         placeholder={"Title"}
@@ -53,7 +54,7 @@ export default function CreatePost() {
       <input
         type="file"
         onChange={(ev) => setFiles(ev.target.files)}
-        className="my-2"
+        className="border-2 border-gray-400 p-2 rounded-md my-2"
       />
       <ReactQuill
         value={content}
@@ -66,6 +67,7 @@ export default function CreatePost() {
       >
         Create post
       </button>
+      </div>
     </form>
   );
 }

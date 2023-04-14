@@ -1,27 +1,26 @@
 import React from "react";
-
-export default function Post() {
+import {Link} from "react-router-dom";
+export default function Post({_id,title,summary,cover,author}) {
   return (
-    <div className="flex mb-7">
-      <div className="w-25 px-4">
-        <img
-          className=""
-          src="https://techcrunch.com/wp-content/uploads/2023/03/BlueOval-City_March-2023-construction_01.jpg?w=1390&crop=1"
-          alt=""
-        />
+    <div className="grid grid-cols-2 mb-7">
+      <div className="max-w-sm px-4">
+      <Link to={`/post/${_id}`}>
+          <img src={'http://localhost:4000/'+cover} alt=""/>
+        </Link>
       </div>
       <div>
-        <h2 className="font-bold text-xl">
-          Ford to build next-gen EV truck at $5.6B factory in 2025
+      <Link to={`/post/${_id}`}>
+      <h2 className="font-bold text-xl">
+          {title}
         </h2>
+        </Link>
+        
         <p className="text-gray-400 text-sm mb-3 my-1">
-          <a className="text-black font-bold" href="">Aditya Muzumdar</a>
+          <a className="text-black font-bold" href="">{author}</a>
           <time className="mx-2">01-03-2023 3:45</time>
         </p>
         <p>
-          Ford said Friday that its $5.6 billion BlueOval City complex outside
-          of Memphis, Tennessee will include a truck plant capable of producing
-          500,000 electric vehicles a year.
+          {summary}
         </p>
       </div>
     </div>
